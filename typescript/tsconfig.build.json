@@ -1,0 +1,13 @@
+{
+  // Publish build: ONLY src/, rooted at src/, so the tarball is dist/index.js
+  // (what package.json "main"/"types" point at). tsconfig.json deliberately
+  // also includes examples/ for typechecking — building with THAT one would
+  // emit dist/src/index.js and ship a package whose main resolves to nothing.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist", "node_modules", "examples"]
+}
