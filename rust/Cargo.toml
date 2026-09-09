@@ -1,0 +1,19 @@
+[package]
+name = "telequick-agents"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.88"
+description = "TeleQuick external-agent SDK for Rust — run your own voice agent against real phone calls over TeleQuick's QUIC media plane."
+license = "MIT"
+
+[dependencies]
+wtransport = { version = "0.7", features = ["dangerous-configuration"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "signal", "io-util"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+subtle = "2"
+thiserror = "2"
+tracing = "0.1"
